@@ -1,0 +1,55 @@
+timestamp,user_id,image_id,iteration,image_name,vlm_prompt,raw_description,fkgl_raw,fre_raw,principle_status,regenerate_desc_1,regenerate_desc_2,regenerate_desc_3,final_description,fkgl_final,fre_final,compliance_score,cai_iterations,rating,comment,tone,summary_type
+2026-04-22 08:36:47,13,6527b28c,1,99.png,"Describe this chart in detail for a blind student learning about data visualization. Focus on conveying the overall trend and key data points. Explain the type of chart, the axes labels and their units, and the relationship between the data presented. Use complete sentences and avoid visual terms like ""above,"" ""below,"" ""color,"" or ""shape."" Instead, use comparative language like ""higher than"" or ""lower than."" Provide numerical values where possible. Write the entire description in plain text, using only standard English punctuation. Do not use any markdown formatting, asterisks, or bullet points.
+
+MANDATORY: You MUST write the entire image description in English ONLY.","This image presents a flowchart, a type of diagram used to illustrate a process or workflow. The flowchart details a troubleshooting guide for a lamp that is not working. 
+
+The process begins with a rectangular box labeled “Lamp doesn’t work.” From this starting point, an arrow leads to a diamond-shaped box posing the question, “Lamp plugged in?” A line extending from the “No” side of this diamond leads to a rectangular box instructing the user to “Plug in lamp.” 
+
+A line extending from the “Yes” side of the “Lamp plugged in?” diamond leads to another diamond-shaped box asking, “Bulb burned out?” A line from the “Yes” side of this second diamond leads to a rectangular box instructing the user to “Replace bulb.” 
+
+Finally, a line from the “No” side of the “Bulb burned out?” diamond leads to a rectangular box instructing the user to “Repair lamp.” This final box represents the end of the troubleshooting process if the bulb is not burned out.
+
+The flowchart demonstrates a sequential decision-making process. The user follows the arrows based on their answers to the questions presented in the diamond-shaped boxes. Each decision point narrows down the potential cause of the lamp not working, ultimately leading to a solution. The entire process is designed to guide the user through a series of checks to identify and resolve the issue.",8.09,63.77,"{""P1"": ""satisfied"", ""P2"": ""satisfied"", ""P3"": ""violated"", ""P4"": ""satisfied"", ""P5"": ""satisfied"", ""P6"": ""violated"", ""P7"": ""satisfied"", ""P8"": ""violated"", ""P9"": ""violated"", ""P10"": ""violated""}","Flowchart: Lamp Troubleshooting.
+The flowchart illustrates a series of checks beginning with a rectangular box labeled “Lamp doesn’t work.” An arrow leads from this box to a diamond shape with the question “Lamp plugged in?” 
+From the “No” side of this diamond, an arrow leads to a rectangular box labeled “Plug in lamp.” 
+From the “Yes” side of the “Lamp plugged in?” diamond, an arrow leads to another diamond shape with the question “Bulb burned out?” 
+From the “Yes” side of this second diamond, an arrow leads to a rectangular box labeled “Replace bulb.” 
+From the “No” side of the “Bulb burned out?” diamond, an arrow leads to a rectangular box labeled “Repair lamp.”",,,"Flowchart: Lamp Troubleshooting.
+The flowchart illustrates a series of checks beginning with a rectangular box labeled “Lamp doesn’t work.” An arrow leads from this box to a diamond shape with the question “Lamp plugged in?” 
+From the “No” side of this diamond, an arrow leads to a rectangular box labeled “Plug in lamp.” 
+From the “Yes” side of the “Lamp plugged in?” diamond, an arrow leads to another diamond shape with the question “Bulb burned out?” 
+From the “Yes” side of this second diamond, an arrow leads to a rectangular box labeled “Replace bulb.” 
+From the “No” side of the “Bulb burned out?” diamond, an arrow leads to a rectangular box labeled “Repair lamp.”",5.7,76.73,1.0,2,,,neutral,medium
+2026-04-22 08:39:16,13,0a1a6340,1,4.png,"Describe this chart in detail for a blind student learning about data visualization. Focus on conveying the overall trend and key data points. Explain the type of chart, the axes labels and their units, and the relationship between the data presented. Use complete sentences and avoid visual terms like ""above,"" ""below,"" ""color,"" or ""shape."" Instead, use comparative language like ""higher than,"" ""lower than,"" and ""increasing."" Provide numerical values where possible to illustrate the data. Write the entire description in plain text, using only English, and do not include any markdown formatting, asterisks, or bullet points.
+
+MANDATORY: You MUST write the entire image description in English ONLY.","This is a pie chart illustrating the distribution of different types of pizza sold. A pie chart represents data as proportional slices of a circle, where the entire circle represents 100 percent of the data. In this case, the data represents the types of pizza sold. 
+
+The chart divides the total pizza sales into five categories: Cheese and tomato, Pepperoni, Vegetable supreme, Hawaiian, and Spicy beef and pepper. Each slice of the pie represents the proportion of total sales for that particular pizza type.
+
+The largest portion of pizza sales is for Spicy beef and pepper, representing 126 degrees of the circle. This indicates that Spicy beef and pepper pizza accounts for the greatest percentage of total sales. The next largest portion is for Vegetable supreme, with 90 degrees, meaning it represents the second highest proportion of sales. 
+
+Pepperoni pizza accounts for 72 degrees, indicating it is the third most popular type. Both Hawaiian and Cheese and tomato pizzas have the smallest portions, each representing 36 degrees. This means these two pizza types have equal and the lowest proportion of total sales. 
+
+Therefore, Spicy beef and pepper pizza is sold more frequently than any other type, while Hawaiian and Cheese and tomato pizzas are sold with approximately the same frequency, and at a lower rate than the other options. The total of all degrees in a circle is 360, and the sum of the degrees in this chart (126 + 90 + 72 + 36 + 36) equals 360, confirming that all pizza sales are accounted for within these five categories.",10.94,51.8,"{""P1"": ""satisfied"", ""P2"": ""satisfied"", ""P3"": ""violated"", ""P4"": ""satisfied"", ""P5"": ""satisfied"", ""P6"": ""violated"", ""P7"": ""not applicable"", ""P8"": ""violated"", ""P9"": ""violated"", ""P10"": ""violated""}","A pie chart shows the distribution of pizza types sold. The chart is divided into five categories: Cheese and tomato, Pepperoni, Vegetable supreme, Hawaiian, and Spicy beef and pepper. The chart displays the proportional representation of each pizza type within total sales.
+
+Spicy beef and pepper pizza accounts for 126 degrees of the circle. Vegetable supreme pizza accounts for 90 degrees. Pepperoni pizza accounts for 72 degrees. Hawaiian and Cheese and tomato pizzas each account for 36 degrees. 
+
+The total number of degrees in the chart is 360.",,,"A pie chart shows the distribution of pizza types sold. The chart is divided into five categories: Cheese and tomato, Pepperoni, Vegetable supreme, Hawaiian, and Spicy beef and pepper. The chart displays the proportional representation of each pizza type within total sales.
+
+Spicy beef and pepper pizza accounts for 126 degrees of the circle. Vegetable supreme pizza accounts for 90 degrees. Pepperoni pizza accounts for 72 degrees. Hawaiian and Cheese and tomato pizzas each account for 36 degrees. 
+
+The total number of degrees in the chart is 360.",8.68,52.43,1.0,2,1,incorrect numerical values,neutral,short
+2026-04-22 08:43:04,13,0a1a6340,2,regenerated_iteration,"Rewrite the following image description.
+Language: English — You must write the entire description in English only.
+Tone: neutral
+Length: short
+Start directly with the description — no introductions or meta-commentary.
+
+FORMATTING RULE: Do NOT use markdown. No asterisks (*), hash marks (#), or bullets.
+
+Original description:
+A pie chart shows the distribution of pizza types sold. The chart is divided into five categories: Cheese and tomato, Pepperoni, Vegetable supreme, Hawaiian, and Spicy beef and pepper. The chart displays the proportional representation of each pizza type within total sales.
+
+Spicy beef and pepper pizza accounts for 126 degrees of the circle. Vegetable supreme pizza accounts for 90 degrees. Pepperoni pizza accounts for 72 degrees. Hawaiian and Cheese and tomato pizzas each account for 36 degrees. 
+
+The total number of degrees in the chart is 360.","A pie chart illustrates the distribution of pizza sales by type. Categories include Cheese and tomato, Pepperoni, Vegetable supreme, Hawaiian, and Spicy beef and pepper. Spicy beef and pepper represents 126 degrees, Vegetable supreme 90 degrees, Pepperoni 72 degrees, and Hawaiian and Cheese and tomato each represent 36 degrees. The chart totals 360 degrees.",11.09,39.6,"{""P1"": ""satisfied"", ""P2"": ""satisfied"", ""P3"": ""violated"", ""P4"": ""satisfied"", ""P5"": ""satisfied"", ""P6"": ""satisfied"", ""P7"": ""satisfied"", ""P8"": ""satisfied"", ""P9"": ""satisfied"", ""P10"": ""satisfied""}","A pie chart shows the distribution of pizza sales by type. The chart is divided into five categories: Cheese and tomato, Pepperoni, Vegetable supreme, Hawaiian, and Spicy beef and pepper. Spicy beef and pepper is the most popular pizza type, accounting for the largest portion of sales. Cheese and tomato and Hawaiian pizzas are equally popular, representing the smallest portions of sales. Pepperoni represents 72 degrees, Vegetable supreme represents 90 degrees, Spicy beef and pepper represents 126 degrees, and Cheese and tomato and Hawaiian each represent 36 degrees. The chart totals 360 degrees.",,,"A pie chart shows the distribution of pizza sales by type. The chart is divided into five categories: Cheese and tomato, Pepperoni, Vegetable supreme, Hawaiian, and Spicy beef and pepper. Spicy beef and pepper is the most popular pizza type, accounting for the largest portion of sales. Cheese and tomato and Hawaiian pizzas are equally popular, representing the smallest portions of sales. Pepperoni represents 72 degrees, Vegetable supreme represents 90 degrees, Spicy beef and pepper represents 126 degrees, and Cheese and tomato and Hawaiian each represent 36 degrees. The chart totals 360 degrees.",11.26,41.92,1.0,2,,,neutral,short
