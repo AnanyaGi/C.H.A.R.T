@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisuAlly - Inclusive Design</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ACCESSIBILITY BAR ===== -->
+  <header class="access-bar">
+    <h1>VisuAlly</h1>
+    <div class="access-controls">
+      <button id="decreaseText" aria-label="Decrease Text Size">A-</button>
+      <button id="resetText"    aria-label="Reset Text Size">A</button>
+      <button id="increaseText" aria-label="Increase Text Size">A+</button>
+      <button id="contrastBtn"  aria-label="Toggle High Contrast"> Contrast</button>
+      <button id="dyslexiaBtn"  aria-label="Toggle Dyslexia Font">Abc Dyslexia</button>
+      <button id="cursorBtn"    aria-label="Toggle Large Cursor">🖱️ Big Cursor</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- =========================================================
+         LOGIN SECTION
+    ========================================================= -->
+    <section id="loginSection" class="section login-section" aria-labelledby="login-heading">
+      <div class="login-card">
+
+        <div class="login-logo">
+          <h2 id="login-heading">Welcome to VisuAlly</h2>
+        </div>
+
+        <!-- Tab toggle: New / Returning -->
+        <div class="login-tabs" role="tablist">
+          <button id="tabNew"       class="login-tab active" role="tab" aria-selected="true"  aria-controls="newUserPanel">New User</button>
+          <button id="tabReturning" class="login-tab"        role="tab" aria-selected="false" aria-controls="returningPanel">Returning User</button>
+        </div>
+
+        <!-- ── NEW USER PANEL ── -->
+        <div id="newUserPanel" role="tabpanel" aria-labelledby="tabNew">
+          <p class="panel-hint">Create your personalised profile to get started.</p>
+
+          <div class="form-group">
+            <label for="langSelect">Preferred Language</label>
+            <select id="langSelect">
+              <option value="English">English</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Tamil">Tamil</option>
+            
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="visionSelect">Vision Type</label>
+            <select id="visionSelect">
+              <option value="Totally Blind">Totally Blind</option>
+              <option value="Low Vision">Low Vision</option>
+              <option value="Color Blind">Color Blind</option>
+              <option value="Sighted">Sighted </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="familiaritySelect">Familiarity with AI Descriptions</label>
+            <select id="familiaritySelect">
+              <option value="Beginner">Beginner – First time</option>
+              <option value="Intermediate">Intermediate – Used occasionally</option>
+              <option value="Advanced">Advanced – Use regularly</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="useSelect">Primary Use</label>
+            <select id="useSelect">
+              <option value="Education">Education</option>
+              <option value="Work">Work / Professional</option>
+              <option value="Personal">Personal </option>
+              <option value="General">General Browsing</option>
+            </select>
+          </div>
+
+          <button id="registerBtn" class="btn-primary btn-full">Create Profile ›</button>
+        </div>
+
+        <!-- ── RETURNING USER PANEL ── -->
+        <div id="returningPanel" role="tabpanel" aria-labelledby="tabReturning" class="hidden">
+          <p class="panel-hint">Enter your User ID to continue with your personalised experience.</p>
+
+          <div class="form-group">
+            <label for="existingIdInput">Your User ID</label>
+            <input type="text" id="existingIdInput"
+                   placeholder="e.g. 1, 2, 3…"
+                   autocomplete="off" spellcheck="false">
+          </div>
+
+          <button id="returningBtn" class="btn-primary btn-full">Sign In ›</button>
+        </div>
+
+        <!-- Status / loader -->
+        <div id="loginLoader" class="hidden login-loader" role="status">Setting up… ⏳</div>
+        <div id="loginError"  class="hidden login-error"  role="alert"></div>
+
+        <!-- ── WELCOME BACK / NEW ID DISPLAY ── -->
+        <div id="userIdDisplay" class="hidden user-id-display">
+          <p id="userIdMessage"></p>
+          <div class="user-id-box">
+            <code id="userIdText"></code>
+            <button id="copyIdBtn" class="btn-copy" aria-label="Copy user ID"> Copy</button>
+          </div>
+          <p class="id-note">Save this ID — you'll need it to sign in next time.</p>
+          <button id="continueBtn" class="btn-primary btn-full">Continue to VisuAlly ›</button>
+        </div>
+
+      </div><!-- /.login-card -->
+    </section>
+
+    <!-- =========================================================
+         UPLOAD SECTION
+    ========================================================= -->
+    <section id="uploadSection" class="section upload-section hidden" aria-labelledby="upload-heading">
+
+      <!-- User badge -->
+      <div class="user-badge" id="userBadge">
+        <span class="badge-label">Signed in as</span>
+        <code id="badgeUserId"></code>
+        <span id="badgeProfile" class="badge-profile"></span>
+      </div>
+
+      <h2 id="upload-heading">Upload Image</h2>
+      <p>Select an image to receive a personalised accessible description.</p>
+
+      <label for="imageInput" class="sr-only">Choose an image file</label>
+      <input type="file" id="imageInput" accept="image/*">
+      <button id="uploadBtn" class="btn-primary">Analyse Image</button>
+
+      <div id="statusRegion" class="sr-only" aria-live="polite"></div>
+      <div id="loader" class="hidden status-box" role="status">Analysing image… ⏳</div>
+
+      <div id="imagePreview" class="hidden">
+        <h4>Uploaded Image</h4>
+        <img id="previewImg" alt="Preview of uploaded content" />
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SUMMARY SECTION
+    ========================================================= -->
+    <section class="section summary-section hidden" id="summarySection" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Generated Description</h2>
+
+      <div id="description" tabindex="0" class="description-box"></div>
+
+      <!-- CAI Compliance Badge -->
+      <div id="caiScoreBar" class="cai-score-bar hidden">
+        <span class="cai-label">Constitutional AI</span>
+        <span id="caiScoreBadge" class="cai-badge"></span>
+        <span id="caiIterLabel" class="cai-iter-label"></span>
+      </div>
+
+      <!-- VLM Prompt + CAI Critique inspector (collapsible) -->
+      <details class="prompt-inspector">
+        <summary>View VLM Prompt &amp; CAI Critique Report</summary>
+        <div id="vlmPromptBox" class="vlm-prompt-box"></div>
+        <div id="critiqueBox" class="critique-box hidden"></div>
+      </details>
+
+      <!-- ── RATING PANEL ── -->
+      <div id="ratingPanel" class="panel rating-panel">
+        <h3>Rate this description</h3>
+        <div class="star-row" role="group" aria-label="Rating 1 to 5">
+          <button class="star-btn" data-value="1" aria-label="1 star">★</button>
+          <button class="star-btn" data-value="2" aria-label="2 stars">★</button>
+          <button class="star-btn" data-value="3" aria-label="3 stars">★</button>
+          <button class="star-btn" data-value="4" aria-label="4 stars">★</button>
+          <button class="star-btn" data-value="5" aria-label="5 stars">★</button>
+        </div>
+        <p id="ratingValue" class="rating-hint">Select a rating above</p>
+        <label for="commentBox">Comment (optional)</label>
+        <textarea id="commentBox" placeholder="What did you think of this description?" rows="2"></textarea>
+        <button id="submitRatingBtn" class="btn-primary" disabled>Submit Rating</button>
+        <div id="ratingStatus" class="rating-status" aria-live="polite"></div>
+      </div>
+
+      <!-- ── REGENERATION PANEL ── -->
+      <div id="regenPanel" class="panel regen-panel">
+        <h3>Refine Description</h3>
+        <div class="regen-controls">
+          <div class="form-group">
+            <label for="toneSelect">Tone</label>
+            <select id="toneSelect" disabled>
+              <option value="neutral">Neutral</option>
+              <option value="simple">Simple</option>
+              <option value="detailed">Detailed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="lengthSelect">Length</label>
+            <select id="lengthSelect" disabled>
+              <option value="short">Short</option>
+              <option value="medium">Medium</option>
+              <option value="long">Long</option>
+            </select>
+          </div>
+          <button id="regenBtn" class="btn-secondary" disabled>Regenerate ↻</button>
+        </div>
+        <div id="regenLoader" class="hidden status-box" role="status">Regenerating… ⏳</div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CHAT SECTION
+    ========================================================= -->
+    <section class="section chat-section hidden" id="chatSection" aria-labelledby="chat-heading">
+      <h2 id="chat-heading">Ask Questions</h2>
+      <div id="chatBox" class="chat-box" role="log" aria-live="polite"></div>
+      <div class="chat-input-area">
+        <label for="question" class="sr-only">Type your question here</label>
+        <input type="text" id="question" placeholder="Ask about the image…" autocomplete="off">
+        <button id="askBtn" class="btn-primary">Ask</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
